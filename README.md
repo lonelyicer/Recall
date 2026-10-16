@@ -1,9 +1,6 @@
 # Recall
 
-git remote add origin https://github.com/lonelyicer/Recall.git
-
-
----
+Yet another guide mod for Minecraft, based on [Ponder](https://github.com/Creators-of-Create/Ponder).
 
 
 ## Setup

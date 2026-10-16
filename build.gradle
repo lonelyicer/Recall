@@ -4,7 +4,8 @@ plugins {
 	id 'idea'
 	id 'net.neoforged.moddev' version '2.0.148'
 	id 'org.jetbrains.kotlin.jvm' version '2.4.20'
-	id 'com.diffplug.spotless' version "8.10.2"
+	id 'org.jetbrains.dokka' version '2.2.0'
+	id 'com.diffplug.spotless' version '8.10.2'
 }
 
 def release = providers.environmentVariable("RELEASE")
@@ -28,10 +29,28 @@ base {
 	archivesName = mod_id
 }
 
+kotlin.jvmToolchain(25)
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 java.withSourcesJar()
+
+tasks.register('javadocJar', Jar) {
+	group = 'build'
+	description = 'Packages Dokka HTML documentation for publication.'
+	archiveClassifier.set('javadoc')
+	from(tasks.named('dokkaGeneratePublicationHtml').flatMap { it.outputDirectory })
+}
+
 java.withJavadocJar()
-kotlin.jvmToolchain(25)
+
+dokka {
+	dokkaPublications {
+		html {
+			moduleName.set('Recall')
+			moduleVersion.set(project.version.toString())
+			outputDirectory.set(layout.buildDirectory.dir('dokka/html'))
+		}
+	}
+}
 
 neoForge {
 	version = project.neo_version
@@ -117,7 +136,7 @@ var testModJar = tasks.register('testModJar', Jar) {
 }
 
 tasks.named('assemble') {
-	dependsOn testModJar
+	dependsOn testModJar, tasks.named('javadocJar')
 }
 
 dependencies {

@@ -1,0 +1,9 @@
+{
+  "screen.recall.title": "Recall",
+  "key.recall.open": "Recall Hovered Item",
+  "key.categories.recall.ui": "Recall",
+  "tooltip.recall.hold_to_recall": "Hold [%1$s] to Recall",
+  "tooltip.recall.subject": "Subject of this entry",
+  "markdown.recall.missing_image": "[Missing image: %s]",
+  "markdown.recall.unsupported_image": "[Unsupported image source: %s]"
+}

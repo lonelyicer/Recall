@@ -1,0 +1,30 @@
+name: CI (Build)
+
+on:
+  push:
+    branches:
+      - 26.1.2-NeoForge
+  pull_request:
+    branches:
+      - 26.1.2-NeoForge
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+
+      - name: Make gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build --no-daemon

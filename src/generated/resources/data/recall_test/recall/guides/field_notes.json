@@ -1,0 +1,10 @@
+{
+  "icon": "minecraft:writable_book",
+  "id": "recall_test:field_notes",
+  "maps": [
+    "recall_test:field_map",
+    "recall_test:lower_route"
+  ],
+  "subtitle": "A server-authored guide for the next descent.",
+  "title": "Abyss Field Notes"
+}

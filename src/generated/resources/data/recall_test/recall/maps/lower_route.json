@@ -1,0 +1,36 @@
+{
+  "edges": [
+    {
+      "from": "recall_test:camp",
+      "kind": "route",
+      "to": "recall_test:echo"
+    }
+  ],
+  "id": "recall_test:lower_route",
+  "nodes": [
+    {
+      "articles": [
+        "recall_test:field_rules"
+      ],
+      "id": "recall_test:camp",
+      "item": "minecraft:lodestone",
+      "summary": "A marked point on the lower route.",
+      "title": "Return Point",
+      "x": 170.0,
+      "y": 245.0
+    },
+    {
+      "articles": [
+        "recall_test:getting_started"
+      ],
+      "id": "recall_test:echo",
+      "item": "minecraft:amethyst_shard",
+      "summary": "A second article can be opened from this node.",
+      "title": "Echo Chamber",
+      "x": 470.0,
+      "y": 245.0
+    }
+  ],
+  "start_node": "recall_test:camp",
+  "title": "Lower Route"
+}

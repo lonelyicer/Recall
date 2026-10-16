@@ -1,0 +1,31 @@
+modLoader = "kotlinforforge"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "recall_test"
+version = "${mod_version}"
+displayName = "Recall Test Mod"
+authors = "${mod_authors}"
+description = '''Demonstration content for Recall's public Datagen API.'''
+
+[[dependencies.recall_test]]
+modId = "recall"
+type = "required"
+versionRange = "[${mod_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.recall_test]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.recall_test]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"

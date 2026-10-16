@@ -1,0 +1,35 @@
+{
+  "edges": [
+    {
+      "from": "recall_test:surface",
+      "kind": "related",
+      "to": "recall_test:rules"
+    }
+  ],
+  "id": "recall_test:field_map",
+  "nodes": [
+    {
+      "articles": [
+        "recall_test:getting_started"
+      ],
+      "id": "recall_test:surface",
+      "item": "minecraft:compass",
+      "summary": "The first landmark before the descent.",
+      "title": "Surface Camp",
+      "x": 150.0,
+      "y": 220.0
+    },
+    {
+      "articles": [
+        "recall_test:field_rules"
+      ],
+      "id": "recall_test:rules",
+      "item": "minecraft:book",
+      "summary": "Rules for every layer.",
+      "title": "Field Rules",
+      "x": 470.0,
+      "y": 220.0
+    }
+  ],
+  "title": "Surface Route"
+}
